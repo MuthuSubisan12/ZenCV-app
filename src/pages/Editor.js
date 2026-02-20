@@ -228,24 +228,6 @@ const Editor = () => {
             transformOrigin: 'top center'
           }}>
              <AnimatePresence mode="wait">{renderTemplate()}</AnimatePresence>
-          // Inside your Preview component return statement:
-<div className="resume-container" style={{
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    padding: '20px 0'
-}}>
-    <div className="resume-paper" style={{
-        // This scales the resume to 50% size on mobile automatically
-        zoom: window.innerWidth < 768 ? '0.5' : '1', 
-        width: '800px', // or your fixed width
-        backgroundColor: 'white',
-        boxShadow: '0 0 10px rgba(0,0,0,0.1)'
-    }}>
-        {/* Your Resume Content Here */}
-    </div>
-</div>
           </div>
         </div>
       </div>
