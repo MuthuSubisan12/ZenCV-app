@@ -222,6 +222,38 @@ const Editor = () => {
           width: isMobile ? '100%' : '65%', 
           display: isMobile && viewMode === 'edit' ? 'none' : 'flex' 
         }}>
+          // Calculate the scale based on the parent container's width
+const [scale, setScale] = useState(1);
+const resumeRef = useRef(null);
+
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth < 768 && resumeRef.current) {
+      // 360 is a safe mobile width; adjust based on your padding
+      const newScale = (window.innerWidth - 40) / 800; // 800 is resume base width
+      setScale(newScale);
+    } else {
+      setScale(1);
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  handleResize(); // Initial call
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+// Apply to your resume div
+<div 
+  ref={resumeRef}
+  style={{ 
+    transform: `scale(${scale})`, 
+    transformOrigin: 'top center',
+    width: '800px', // Keep your fixed A4-proportional width
+    margin: '0 auto'
+  }}
+>
+  {/* Resume Content */}
+</div>
           <div id="resume-render" style={{
             ...resumePaper,
             transform: isMobile ? `scale(${(windowWidth - 40) / 794})` : 'scale(0.75)',
