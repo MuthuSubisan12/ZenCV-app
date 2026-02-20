@@ -153,7 +153,7 @@ const gridStyle = {
   gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
   gap: '30px', 
   maxWidth: '1200px', 
-  margin: '0 auto',
+  margin:  auto',
   paddingBottom: '50px'
 };
 
