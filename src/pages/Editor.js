@@ -222,6 +222,13 @@ const Editor = () => {
           width: isMobile ? '100%' : '65%', 
           display: isMobile && viewMode === 'edit' ? 'none' : 'flex' 
         }}>
+           <div id="resume-render" style={{
+            ...resumePaper,
+            
+            transformOrigin: 'top center'
+          }}>
+             <AnimatePresence mode="wait">{renderTemplate()}</AnimatePresence>
+          </div>
         </div>
       </div>
 
