@@ -16,15 +16,6 @@
     overflow: hidden; /* Prevents horizontal scrolling */
     padding: 10px;
   }
-
-  .resume-paper {
-    /* This forces the A4-sized paper to scale down or up to fit the screen width */
-    transform: scale(0.45); /* Adjust this value (0.4 to 0.5) until it looks perfect */
-    transform-origin: top center;
-    margin-bottom: -400px; /* This removes the empty space left behind by scaling */
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
